@@ -8,7 +8,7 @@ class IntStringer {
 		String b = "1F";
 		String myIntString = stringer( a );
 		System.out.println(myIntString);
-		int c = iHexYou( b );
+		int c = hexAmount( b );
 		System.out.println( c );
 		
 	}	
@@ -45,7 +45,7 @@ class IntStringer {
 		return turnaround;
 	}	
 	
-	public static int iHexYou( String hexNum){
+	public static int hexAmount( String hexNum){
 	
 		Hashtable<String, Integer> hexDigi = new Hashtable<String, Integer>();
 		
@@ -70,8 +70,8 @@ class IntStringer {
 		for ( int i = 0; i < hexNum.length(); i++ ){
 			double multiplier = Math.pow(16, i );
 			int place = hexNum.length() - 1;
-			numBuffer = hexDigi.get(hexNum.valueOf(place - i));
-			
+			//numBuffer = hexDigi.get(hexNum.valueOf(place - i));
+			numBuffer = hexDigi.get(hexNum.charAt(place - i));
 			numCounter += numBuffer * multiplier;
 			
 		}
